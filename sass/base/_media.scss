@@ -163,13 +163,113 @@
             font-size: 19px;
         }
     }
+
+    .advantages {
+        &__header {
+            font-size: 26px;
+        }
+
+        &__wrapper {
+            column-gap: 26px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
 
     .promo {
+        padding-top: 75px;
+        position: relative;
+        background: url(../img/promo-bg.jpg) center center / cover no-repeat;
+        background-position: -200px 0;
+
         &__wrapper {
             align-items: center;
+        }
+
+        .header {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 54px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+
+            .hamburger {
+                display: flex;
+            }
+
+            .info_active {
+                left: 0;
+
+                .header__logo {
+                    display: block;
+                    order: 3;
+                    object-fit: contain;
+                    width: 100%;
+                }
+
+                .header__official {
+                    display: block;
+                    order: 2;
+                }
+
+                .header__contacts {
+                    display: flex;
+                    flex-direction: column;
+                    order: 1;
+                }
+            }
+
+            &__logo {
+                display: none;
+            }
+
+            &__official {
+                display: none;
+            }
+
+            &__contacts {
+                display: none;
+            }
+
+            &__phone {
+                font-size: 16px;
+            }
+        }
+
+        &__header {
+            font-size: 7vw;
+        }
+
+        &__subheader {
+            font-size: 3.5vw;
+        }
+
+        &__icons {
+            width: 100%;
+        }
+    }
+
+    .advantages {
+        &__header {
+            font-size: 5vw;
+        }
+
+        &__wrapper {
+            flex-direction: column;
+            row-gap: 30px;
+            margin: 50px 20px 50px;
+        }
+
+        &__item {
+            width: 100%;
+            // flex-direction: row;
+        }
+
+        &__title {
+            margin-top: 26px;
         }
     }
 }
