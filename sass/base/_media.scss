@@ -339,8 +339,13 @@
         }
 
         .title_consult {
-            font-size: 22px;
+            font-size: 5vw;
             text-align: center;
+        }
+
+        &__descr {
+            text-align: center;
+            font-size: 4vw;
         }
     }
 
