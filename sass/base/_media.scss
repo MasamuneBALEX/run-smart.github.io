@@ -73,7 +73,7 @@
             margin-top: 50px;
         }
 
-        &__header {
+        .title {
             font-size: 38px;
         }
 
@@ -91,12 +91,34 @@
             font-size: 20px;
         }
     }
+
+    .consultations {
+        .title_left {
+            font-size: 40px;
+        }
+
+        &__descr {
+            font-size: 28px;
+        }
+
+        .form {
+            input {
+                font-size: 18px;
+            }
+        }
+
+        .button_submit {
+            font-size: 18px;
+        }
+    }
 }
 
 @media (max-width: 992px) {
     .container {
         max-width: 760px;
     }
+
+    // PROMO БЛОК
 
     .promo {
         .button_size {
@@ -113,7 +135,7 @@
             }
         }
 
-        &__header {
+        .title_header {
             font-size: 40px;
             margin-top: 74px;
         }
@@ -123,11 +145,31 @@
         }
     }
 
+    // PROMO БЛОК
+
     .advantages {
         &__wrapper {
             margin-top: 30px;
         }
     }
+
+    .consultations {
+        .title_left {
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        &__descr {
+            font-size: 18px;
+            margin: 22px 0 0;
+        }
+
+        .form {
+            margin-top: 30px;
+        }
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -165,12 +207,30 @@
     }
 
     .advantages {
-        &__header {
+        .title {
             font-size: 26px;
+
         }
+
 
         &__wrapper {
             column-gap: 26px;
+        }
+    }
+
+    .consultations {
+        .title_left {
+            font-size: 22px;
+            margin-bottom: 0;
+        }
+
+        &__descr {
+            font-size: 15px;
+            margin: 18px 0 0;
+        }
+
+        .form {
+            margin-top: 20px;
         }
     }
 }
@@ -200,7 +260,7 @@
                 display: flex;
             }
 
-            .info_active {
+            .header__info_active {
                 left: 0;
 
                 .header__logo {
@@ -253,7 +313,7 @@
     }
 
     .advantages {
-        &__header {
+        .title {
             font-size: 5vw;
         }
 
@@ -272,4 +332,16 @@
             margin-top: 26px;
         }
     }
+
+    .consultations {
+        &__wrapper {
+            align-items: center;
+        }
+
+        .title_consult {
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+
 }
