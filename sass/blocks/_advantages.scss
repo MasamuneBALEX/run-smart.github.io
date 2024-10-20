@@ -3,13 +3,6 @@
     padding: 70px 0 65px;
     background-color: $bg-color;
 
-    &__header {
-        font-weight: 700;
-        font-size: 30px;
-        text-align: center;
-        color: $text-color-secondary;
-    }
-
     &__wrapper {
         display: flex;
         justify-content: space-between;

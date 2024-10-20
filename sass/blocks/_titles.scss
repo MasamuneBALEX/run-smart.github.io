@@ -1,0 +1,14 @@
+.title {
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: $text-color-secondary;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    &_consult {
+        font-size: 36px;
+        color: $text-color;
+        text-align: left;
+    }
+}
