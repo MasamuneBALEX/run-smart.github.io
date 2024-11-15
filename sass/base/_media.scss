@@ -233,6 +233,13 @@
             margin-top: 20px;
         }
     }
+
+    .slider {
+        .owl-carousel {
+            width: 100%;
+            height: 60vw;
+        }
+    }
 }
 
 @media (max-width: 576px) {
@@ -250,6 +257,7 @@
         .header {
             display: flex;
             position: fixed;
+            z-index: 10;
             top: 0;
             left: 0;
             height: 54px;
@@ -349,4 +357,102 @@
         }
     }
 
+    .slider {
+        .owl-carousel {
+            width: 100%;
+            height: 70vw;
+        }
+
+        .owl-nav {
+            display: none;
+        }
+    }
+
+    .catalogue {
+        .title {
+            font-size: 6vw;
+        }
+
+        &__tabs {}
+
+        &__tab {
+            width: 26vw;
+            font-size: 2.8vw;
+
+            &:hover {
+                box-shadow: none;
+                font-size: 2.8vw;
+            }
+        }
+    }
+
+    .reviews {
+        .title {
+            font-size: 6vw;
+        }
+
+        &__review {
+            column-gap: 0;
+            row-gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &-block {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 20px;
+
+                &__name,
+                &__total {
+                    text-align: center;
+                }
+
+                &__text {
+                    text-align: justify;
+                }
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 353px) {
+    .catalogue {
+
+        &__tabs {
+            margin-top: 40px;
+        }
+
+        &__tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24vw;
+            font-size: 3vw;
+            line-height: inherit;
+
+            &:hover {
+                box-shadow: none;
+                font-size: 3vw;
+            }
+        }
+    }
+
+    .reviews {
+
+        &__review {
+
+            &-block {
+                padding: 0 10px;
+
+                &__text {
+                    text-align: center;
+                }
+            }
+
+        }
+
+    }
 }

@@ -1,0 +1,31 @@
+.slider {
+    padding: 81px 0;
+
+    .owl-carousel {
+        height: 580px;
+        width: 750px;
+        margin: 0 auto;
+
+        .owl-nav {
+            width: 100%;
+            position: absolute;
+            top: 254px;
+
+            .owl-prev,
+            .owl-next {
+                display: block;
+                position: absolute;
+                width: 31px;
+                height: 50px;
+            }
+
+            .owl-prev {
+                left: -66px;
+            }
+
+            .owl-next {
+                right: -66px;
+            }
+        }
+    }
+}
