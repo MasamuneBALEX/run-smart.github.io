@@ -54,6 +54,9 @@ $(document).ready(function () {
             nav: true,
             slideTransition: '',
             autoplay: true,
+            responsive: [
+
+            ],
             navText: [
                 '<div class="owl-prev"><img src="./img/slider/left-btn.png"></div>',
                 '<div class="owl-next"><img src="./img/slider/right-btn.png"></div>'

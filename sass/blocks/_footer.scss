@@ -1,0 +1,60 @@
+.footer {
+    position: relative;
+    height: 630px;
+
+    &__info {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 270px;
+        width: 460px;
+        background-color: $main-color;
+    }
+
+    &__address {
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        color: $text-color;
+        margin: 50px 0 0;
+        line-height: 20px;
+    }
+
+    &__phone-number {
+        text-align: center;
+        display: block;
+        margin-top: 36px;
+        font-weight: 700;
+        line-height: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: $text-color;
+        text-decoration-line: none;
+    }
+
+    &__social-media {
+        display: flex;
+        margin: 36px auto 0;
+        align-items: center;
+        justify-content: space-between;
+        width: 212px;
+        height: 50px;
+    }
+
+    &__social-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50px;
+        border: 2px solid $text-color;
+        border-radius: 50%;
+        margin: 0;
+
+        img {
+            display: block;
+        }
+    }
+
+}
