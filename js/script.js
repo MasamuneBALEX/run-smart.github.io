@@ -133,15 +133,21 @@ $(document).ready(function () {
     function validateForms(form) {
         $(form).validate({
             rules: {
-                name: 'required',
+                name: {
+                    required: true,
+                    minlength: 2
+                },
                 phone_number: 'required',
                 email: {
                     required: true,
-                    email: true
+                    email: true,
                 }
             },
             messages: {
-                name: 'Пожалуйста укажите ваше имя',
+                name: {
+                    required: 'Пожалуйста укажите ваше имя',
+                    minlength: jQuery.validator.format('Пожалуйста введите не менее {0} символов')
+                },
                 phone_number: 'Пожалуйста укажите ваш мобильный телефон',
                 email: {
                     required: 'Пожалуйста укажите вашу электронную почту',
@@ -164,7 +170,7 @@ $(document).ready(function () {
             return;
         };
 
-        s.ajax({
+        $.ajax({
             type: 'POST',
             url: 'mailer/smart.php',
             data: $(this).serialize()
