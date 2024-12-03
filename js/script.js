@@ -82,4 +82,99 @@ $(document).ready(function () {
 
     toggleSlide('.catalogue-item__link');
     toggleSlide('.catalogue-item__back');
+
+    // Modal Window
+
+    // $('[data-modal=consultation]').on('click', function () {
+    //     $('.overlay, #consultation').fadeIn('slow');
+    // });
+
+    // $('.modal__close').on('click', function () {
+    //     $('.overlay, #consultation, #order, #order-complete').fadeOut('slow');
+    // });
+
+    // // $('.button_mini').on('click', function () {
+    // //     $('.overlay, #order').fadeIn('slow');
+    // // });
+
+    // $('.button_mini').on('click', function () {
+    //     // Находим родительский элемент `.catalogue-item` для текущей кнопки
+    //     const itemSubtitle = $(this).closest('.catalogue-item').find('.catalogue-item__subtitle').text();
+
+    //     // Устанавливаем текст в элемент модального окна с классом `.modal__subtitle`
+    //     $('.modal__subtitle').text(itemSubtitle);
+
+    //     // Показываем модальное окно
+    //     $('.overlay, #order').fadeIn('slow');
+    // });
+
+    // Открытие модального окна для консультации
+    $('[data-modal=consultation]').on('click', function () {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+
+    // Закрытие всех модальных окон
+    $('.modal__close').on('click', function () {
+        $('.overlay, #consultation, #order, #order-complete').fadeOut('slow');
+    });
+
+    // Обработчик для кнопки .button_mini (только для #order)
+    $('.button_mini').on('click', function () {
+        // Находим родительский элемент `.catalogue-item` для текущей кнопки
+        const itemSubtitle = $(this).closest('.catalogue-item').find('.catalogue-item__subtitle').text();
+
+        // Устанавливаем текст в элемент модального окна #order
+        $('#order .modal__subtitle').text(itemSubtitle);
+
+        // Показываем модальное окно #order
+        $('.overlay, #order').fadeIn('slow');
+    });
+
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                name: 'required',
+                phone_number: 'required',
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: 'Пожалуйста укажите ваше имя',
+                phone_number: 'Пожалуйста укажите ваш мобильный телефон',
+                email: {
+                    required: 'Пожалуйста укажите вашу электронную почту',
+                    email: 'Укажите вашу почту в правильном формате!'
+                }
+            }
+        })
+    }
+
+    validateForms('#consultation form');
+    validateForms('#order form');
+    validateForms('#consultation-form');
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+    $('form').submit(function (e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        };
+
+        s.ajax({
+            type: 'POST',
+            url: 'mailer/smart.php',
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find('input').val('');
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #order-complete').fadeIn('slow');
+
+            $('form').trigger('reset');
+        });
+        return false;
+    });
 });

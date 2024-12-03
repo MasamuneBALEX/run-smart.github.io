@@ -19,4 +19,15 @@
         }
     }
 
+    .error {
+        border: 2px solid $main-color;
+    }
+
+    label.error {
+        color: $main-color;
+        margin-top: 15px;
+        border: none;
+        // text-align: center;
+    }
+
 }
