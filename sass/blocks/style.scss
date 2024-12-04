@@ -1,4 +1,15 @@
 @import '../base/_variables';
+@import '../base/_animations';
+
+* {
+    font-family: "MuseoModerno", sans-serif;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
 @import '../blocks/_titles';
 @import '../base/_mixins';
 @import '../blocks/_promo';
@@ -13,15 +24,5 @@
 @import '../blocks/_reviews';
 @import '../blocks/_footer';
 @import '../blocks/_overlay';
-
-
-* {
-    font-family: "MuseoModerno", sans-serif;
-}
-
-.container {
-    max-width: 950px;
-    margin: 0 auto;
-}
-
+@import '../blocks/_up-arrow';
 @import '../base/_media.scss';

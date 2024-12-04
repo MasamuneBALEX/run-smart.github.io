@@ -60,19 +60,6 @@
         padding: 20px;
         overflow: hidden;
 
-        &__back {
-            font-weight: 500;
-            font-size: 14px;
-            text-decoration: underline;
-            text-align: center;
-            color: $main-color;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            text-transform: uppercase;
-            transform: translateX(calc(-50% - 16px));
-        }
-
         &__wrapper {
             display: flex;
             width: calc(200% + 40px);
@@ -108,10 +95,6 @@
                 color: $text-color-descr;
                 padding-left: 16px;
 
-                &:first-child {
-                    margin-top: 0;
-                }
-
                 &::before {
                     content: '';
                     position: absolute;
@@ -123,12 +106,37 @@
                     left: 0;
                     top: 7px;
                 }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: $main-color;
+                    position: absolute;
+                    cursor: pointer;
+
+                    &::before {
+                        display: none;
+                    }
+                }
             }
 
             &_active {
                 transform: translateX(-100%);
                 margin-left: 0px;
             }
+        }
+
+        &__back {
+            text-decoration: underline;
+            text-align: center;
+            bottom: 0;
+            left: 50%;
+            text-transform: uppercase;
+            transform: translateX(calc(-50% - 16px));
         }
 
 

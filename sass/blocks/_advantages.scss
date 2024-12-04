@@ -16,6 +16,14 @@
         justify-content: start;
         align-items: center;
         width: calc(100% / 3);
+
+        &:hover {
+            .advantages__img {
+                &_heart-animation {
+                    animation-play-state: paused;
+                }
+            }
+        }
     }
 
     &__img {
@@ -25,6 +33,13 @@
         object-fit: cover;
         flex-grow: 0;
         flex-shrink: 0;
+
+        &_heart-animation {
+            animation-name: heartbeat;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        }
     }
 
     &__title {
